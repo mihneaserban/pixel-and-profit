@@ -6,11 +6,12 @@ export const Footer = () => {
   return (
     <footer
       // Am adăugat block, mb-[-1px] și pb-10 aici
-      className="relative block pt-20 pb-10 px-6 text-white isolate overflow-hidden mb-[-1px]"
+      className="relative block pt-20 pb-10 px-6 text-white isolate overflow-hidden mb-[-100px] pb-[140px]"
       style={{ 
         background: "var(--gradient-bg-dark)",
         marginTop: "0",
-        display: "block" 
+        display: "block", 
+        boxShadow: "0 50px 0 0 var(--gradient-bg-dark)"
       }}
     >
       {/* Subtle grid pattern */}

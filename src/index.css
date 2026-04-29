@@ -248,8 +248,20 @@
   width: 100%;
   z-index: 0;
   opacity: 0.85;
+  /* Forțează containerul să nu aibă înălțime extra din cauza font-ului */
+  line-height: 0;
+  pointer-events: none;
 }
-.waves svg { width: 100%; height: 100%; display: block; }
+
+.waves svg { 
+  width: 100%; 
+  height: 100%; 
+  display: block;
+  /* Trucul magic: îl mărim cu 2 pixeli și îl împingem în jos ca să "calce" peste margine */
+  transform: scaleY(1.05);
+  transform-origin: bottom;
+  margin-bottom: -2px; 
+}
 .wave-path {
   animation: wave-move 14s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform-origin: center bottom;
