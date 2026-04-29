@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: {
+          cyan: "hsl(var(--brand-cyan))",
+          teal: "hsl(var(--brand-teal))",
+          green: "hsl(var(--brand-green))",
+          deep: "hsl(var(--brand-deep))",
+        },
+      },
+      fontFamily: {
+        display: ['Space Grotesk', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
