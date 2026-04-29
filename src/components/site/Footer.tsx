@@ -5,20 +5,11 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative pt-20 pb-10 px-6 text-white isolate"
+      className="relative pt-20 pb-10 px-6 text-white isolate overflow-hidden"
       style={{ background: "var(--gradient-bg-dark)" }}
     >
-      {/* Solid dark backdrop that extends far below the footer so overscroll never reveals the light bubbly bg */}
-      <div
-        aria-hidden="true"
-        className="absolute left-0 right-0 top-0 -z-10 pointer-events-none"
-        style={{ height: "calc(100% + 200vh)", background: "hsl(220 18% 6%)" }}
-      />
-      {/* Grid pattern + bullet-hole mask (clipped to footer) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="footer-grid absolute inset-0 opacity-60" />
-        <div className="footer-torn absolute inset-0" />
-      </div>
+      {/* Subtle grid pattern */}
+      <div className="footer-grid absolute inset-0 pointer-events-none opacity-60" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl">
