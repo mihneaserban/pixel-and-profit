@@ -5,34 +5,23 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative pt-20 pb-10 px-6 text-white isolate"
+      className="relative pt-20 pb-10 px-6 text-white isolate overflow-hidden"
       style={{ background: "var(--gradient-bg-dark)" }}
     >
-      {/* Solid dark backdrop that extends far below the footer so overscroll never reveals the light bubbly bg */}
-      <div
-        aria-hidden="true"
-        className="absolute left-0 right-0 top-0 -z-10 pointer-events-none"
-        style={{ height: "calc(100% + 200vh)", background: "hsl(220 18% 6%)" }}
-      />
-      {/* Grid pattern + bullet-hole mask (clipped to footer) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="footer-grid absolute inset-0 opacity-60" />
-        <div className="footer-torn absolute inset-0" />
-      </div>
+      {/* Subtle grid pattern */}
+      <div className="footer-grid absolute inset-0 pointer-events-none opacity-60" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-white to-[hsl(220_10%_75%)] ring-1 ring-white/20 shadow-metal overflow-hidden">
-                <img
-                  src={logo}
-                  alt="Pixel & Profit"
-                  className="h-10 w-10 object-contain"
-                  style={{ filter: "grayscale(1) contrast(1.05) brightness(0.92)" }}
-                />
-              </span>
+              <img
+                src={logo}
+                alt="Pixel & Profit"
+                className="h-12 w-12 object-cover rounded-full"
+                style={{ clipPath: "circle(48% at 50% 50%)" }}
+              />
               <span className="font-display font-bold text-lg tracking-tight text-white">
                 Pixel <span className="gradient-text-light">&amp;</span> Profit
               </span>
