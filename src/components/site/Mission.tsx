@@ -147,10 +147,9 @@ export const Mission = () => {
                   <g
                     style={{
                       offsetPath: `path("${d}")`,
-                      // @ts-expect-error vendor
                       offsetRotate: "auto",
                       animation: `plane-fly 9s ${i * 1.4}s cubic-bezier(0.65, 0, 0.35, 1) infinite`,
-                    }}
+                    } as React.CSSProperties}
                   >
                     <g transform="translate(-10,-10)">
                       <path
