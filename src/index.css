@@ -89,11 +89,7 @@
 
 @layer base {
   * { @apply border-border; }
-  html {
-    scroll-behavior: smooth;
-    overscroll-behavior-y: none;
-    background: hsl(220 18% 6%);
-  }
+  html { scroll-behavior: smooth; }
   body {
     @apply text-foreground antialiased;
     background: var(--gradient-bg);
