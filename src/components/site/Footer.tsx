@@ -5,7 +5,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative pt-20 pb-10 px-6 text-white isolate overflow-hidden"
+      className="relative pt-20 px-6 text-white isolate overflow-hidden"
       style={{ background: "var(--gradient-bg-dark)" }}
     >
       {/* Subtle grid pattern */}
