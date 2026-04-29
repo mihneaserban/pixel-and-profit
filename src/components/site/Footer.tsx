@@ -5,8 +5,13 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative pt-20 px-6 text-white isolate overflow-hidden"
-      style={{ background: "var(--gradient-bg-dark)" }}
+      // Am adăugat block, mb-[-1px] și pb-10 aici
+      className="relative block pt-20 pb-10 px-6 text-white isolate overflow-hidden mb-[-1px]"
+      style={{ 
+        background: "var(--gradient-bg-dark)",
+        marginTop: "0",
+        display: "block" 
+      }}
     >
       {/* Subtle grid pattern */}
       <div className="footer-grid absolute inset-0 pointer-events-none opacity-60" />
@@ -93,11 +98,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">
+        {/* Am adăugat pb-4 și m-0 la paragrafe aici */}
+        <div className="mt-14 pt-6 pb-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/40 m-0">
             © {year} Pixel &amp; Profit. Toate drepturile rezervate.
           </p>
-          <p className="text-xs text-white/40">Web Design · SEO · Social Ads · Branding</p>
+          <p className="text-xs text-white/40 m-0">Web Design · SEO · Social Ads · Branding</p>
         </div>
       </div>
     </footer>
