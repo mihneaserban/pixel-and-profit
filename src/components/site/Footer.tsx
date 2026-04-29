@@ -16,14 +16,12 @@ export const Footer = () => {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-white to-[hsl(220_10%_75%)] ring-1 ring-white/20 shadow-metal overflow-hidden">
-                <img
-                  src={logo}
-                  alt="Pixel & Profit"
-                  className="h-10 w-10 object-contain"
-                  style={{ filter: "grayscale(1) contrast(1.05) brightness(0.92)" }}
-                />
-              </span>
+              <img
+                src={logo}
+                alt="Pixel & Profit"
+                className="h-12 w-12 object-cover rounded-full"
+                style={{ clipPath: "circle(48% at 50% 50%)" }}
+              />
               <span className="font-display font-bold text-lg tracking-tight text-white">
                 Pixel <span className="gradient-text-light">&amp;</span> Profit
               </span>
