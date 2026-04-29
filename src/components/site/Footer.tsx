@@ -5,9 +5,16 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="relative pt-20 pb-10 px-6 overflow-hidden"
-      style={{ background: "var(--gradient-bg-dark)" }}
+      className="relative pt-20 pb-10 px-6 overflow-hidden text-white"
+      style={{
+        background: "var(--gradient-bg-dark)",
+        boxShadow: "0 100vh 0 100vh hsl(220 18% 6%)",
+      }}
     >
+      {/* Grid pattern with "torn" mask effect */}
+      <div className="footer-grid absolute inset-0 pointer-events-none opacity-60" />
+      {/* Torn / cracked overlay */}
+      <div className="footer-torn absolute inset-0 pointer-events-none" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl">
