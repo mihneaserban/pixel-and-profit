@@ -148,7 +148,8 @@ export const Nav = () => {
             src={logo}
             alt="Pixel & Profit"
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[80vh] max-w-[80vw] w-auto h-auto object-contain rounded-full drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
+            className="relative max-h-[80vh] max-w-[80vw] w-auto h-auto object-contain drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
+            style={{ clipPath: "circle(48% at 50% 50%)" }}
           />
         </div>
       )}
