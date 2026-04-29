@@ -28,7 +28,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-[hsl(220_18%_6%)]">
+    <main className="relative min-h-screen">
       <AnimatedBackground />
       <Nav />
       <Hero />
