@@ -135,14 +135,7 @@ export const Nav = () => {
           aria-label="Logo Pixel & Profit"
         >
           <div className="absolute inset-0 bg-[hsl(220_18%_8%/0.75)] backdrop-blur-md" />
-          <button
-            type="button"
-            aria-label="Închide"
-            className="absolute top-6 right-6 inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal bubble-hover"
-            onClick={(e) => { e.stopPropagation(); setLogoZoom(false); }}
-          >
-            <X className="h-5 w-5" />
-          </button>
+          
           <div
             onClick={(e) => e.stopPropagation()}
             className="relative h-[80vmin] w-[80vmin] max-h-[80vh] max-w-[80vw] rounded-full overflow-hidden drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"

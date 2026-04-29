@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer
       // Am adăugat block, mb-[-1px] și pb-10 aici
-      className="relative block pt-20 pb-10 px-6 text-white isolate overflow-hidden mb-[-50px] pb-[80px]"
+      className="relative block pt-20 pb-10 px-6 text-white isolate overflow-hidden mb-[-60px] pb-[90px]"
       style={{ 
         background: "var(--gradient-bg-dark)",
         marginTop: "0",
