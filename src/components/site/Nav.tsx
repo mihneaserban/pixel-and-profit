@@ -143,13 +143,16 @@ export const Nav = () => {
           >
             <X className="h-5 w-5" />
           </button>
-          <img
-            src={logo}
-            alt="Pixel & Profit"
+          <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[80vh] max-w-[80vw] w-auto h-auto object-contain drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
-            style={{ clipPath: "circle(48% at 50% 50%)" }}
-          />
+            className="relative h-[80vmin] w-[80vmin] max-h-[80vh] max-w-[80vw] rounded-full overflow-hidden drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
+          >
+            <img
+              src={logo}
+              alt="Pixel & Profit"
+              className="block h-full w-full object-cover scale-[1.18]"
+            />
+          </div>
         </div>
       )}
     </header>
