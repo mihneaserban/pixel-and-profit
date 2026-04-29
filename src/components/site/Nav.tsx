@@ -45,7 +45,8 @@ export const Nav = () => {
               <img
                 src={logo}
                 alt="Pixel & Profit"
-                className="h-14 w-14 object-contain rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] cursor-zoom-in"
+                className="h-14 w-14 object-cover rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] cursor-zoom-in"
+                style={{ clipPath: "circle(48% at 50% 50%)" }}
               />
             </button>
             <a href="#top" className="font-display font-bold text-[16px] tracking-tight text-foreground hidden sm:inline hover:opacity-80 transition-smooth">
