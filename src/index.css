@@ -295,39 +295,50 @@
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
 
-/* Footer grid pattern with "torn / cracked" mask */
+/* Footer grid (clean, full coverage — bullet holes are layered on top) */
 .footer-grid {
   background-image:
-    linear-gradient(hsl(220 12% 75% / 0.10) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(220 12% 75% / 0.10) 1px, transparent 1px);
+    linear-gradient(hsl(220 12% 75% / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(220 12% 75% / 0.09) 1px, transparent 1px);
   background-size: 44px 44px;
-  /* Torn edges: hide grid in irregular patches so it looks "ripped" */
-  -webkit-mask-image:
-    radial-gradient(circle at 12% 22%, transparent 0 70px, black 110px),
-    radial-gradient(circle at 78% 18%, transparent 0 90px, black 140px),
-    radial-gradient(circle at 38% 70%, transparent 0 60px, black 100px),
-    radial-gradient(circle at 88% 82%, transparent 0 80px, black 130px),
-    radial-gradient(circle at 22% 90%, transparent 0 50px, black 90px),
-    linear-gradient(black, black);
-  mask-image:
-    radial-gradient(circle at 12% 22%, transparent 0 70px, black 110px),
-    radial-gradient(circle at 78% 18%, transparent 0 90px, black 140px),
-    radial-gradient(circle at 38% 70%, transparent 0 60px, black 100px),
-    radial-gradient(circle at 88% 82%, transparent 0 80px, black 130px),
-    radial-gradient(circle at 22% 90%, transparent 0 50px, black 90px),
-    linear-gradient(black, black);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
 }
 
+/* Bullet holes: dark center, bright metallic rim, glowing white cracks */
 .footer-torn {
   background:
-    radial-gradient(ellipse 180px 60px at 14% 20%, hsl(0 0% 0% / 0.5), transparent 70%),
-    radial-gradient(ellipse 220px 70px at 78% 16%, hsl(0 0% 0% / 0.45), transparent 70%),
-    radial-gradient(ellipse 150px 50px at 40% 72%, hsl(0 0% 0% / 0.4), transparent 70%),
-    radial-gradient(ellipse 200px 65px at 88% 84%, hsl(0 0% 0% / 0.5), transparent 70%);
-  mix-blend-mode: multiply;
-  filter: blur(2px);
+    radial-gradient(circle at 12% 22%, hsl(0 0% 0% / 0.95) 0 8px, hsl(220 14% 78% / 0.55) 9px 11px, hsl(0 0% 0% / 0.55) 12px 22px, transparent 38px),
+    radial-gradient(circle at 80% 16%, hsl(0 0% 0% / 0.95) 0 11px, hsl(220 14% 82% / 0.6) 12px 14px, hsl(0 0% 0% / 0.5) 15px 28px, transparent 46px),
+    radial-gradient(circle at 42% 62%, hsl(0 0% 0% / 0.95) 0 7px, hsl(220 14% 80% / 0.55) 8px 10px, hsl(0 0% 0% / 0.5) 11px 20px, transparent 34px),
+    radial-gradient(circle at 88% 78%, hsl(0 0% 0% / 0.95) 0 13px, hsl(220 14% 85% / 0.65) 14px 16px, hsl(0 0% 0% / 0.55) 17px 32px, transparent 52px),
+    radial-gradient(circle at 22% 86%, hsl(0 0% 0% / 0.95) 0 9px, hsl(220 14% 80% / 0.55) 10px 12px, hsl(0 0% 0% / 0.5) 13px 24px, transparent 40px);
+  background-repeat: no-repeat;
+}
+
+/* Glowing white cracks radiating from bullet holes */
+.footer-torn::before,
+.footer-torn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 3px hsl(0 0% 100% / 0.55));
+}
+.footer-torn::before {
+  background:
+    linear-gradient(35deg, transparent 49.85%, hsl(0 0% 100% / 0.85) 49.95%, hsl(0 0% 100% / 0.85) 50.05%, transparent 50.15%) 12% 22% / 180px 1.5px no-repeat,
+    linear-gradient(110deg, transparent 49.85%, hsl(0 0% 100% / 0.7) 49.95%, hsl(0 0% 100% / 0.7) 50.05%, transparent 50.15%) 12% 22% / 130px 1px no-repeat,
+    linear-gradient(-25deg, transparent 49.85%, hsl(0 0% 100% / 0.85) 49.95%, hsl(0 0% 100% / 0.85) 50.05%, transparent 50.15%) 80% 16% / 220px 1.5px no-repeat,
+    linear-gradient(60deg, transparent 49.85%, hsl(0 0% 100% / 0.7) 49.95%, hsl(0 0% 100% / 0.7) 50.05%, transparent 50.15%) 80% 16% / 150px 1px no-repeat,
+    linear-gradient(-50deg, transparent 49.85%, hsl(0 0% 100% / 0.9) 49.95%, hsl(0 0% 100% / 0.9) 50.05%, transparent 50.15%) 88% 78% / 240px 1.5px no-repeat,
+    linear-gradient(20deg, transparent 49.85%, hsl(0 0% 100% / 0.65) 49.95%, hsl(0 0% 100% / 0.65) 50.05%, transparent 50.15%) 88% 78% / 170px 1px no-repeat;
+}
+.footer-torn::after {
+  background:
+    linear-gradient(75deg, transparent 49.85%, hsl(0 0% 100% / 0.8) 49.95%, hsl(0 0% 100% / 0.8) 50.05%, transparent 50.15%) 42% 62% / 200px 1.3px no-repeat,
+    linear-gradient(-15deg, transparent 49.85%, hsl(0 0% 100% / 0.65) 49.95%, hsl(0 0% 100% / 0.65) 50.05%, transparent 50.15%) 42% 62% / 140px 1px no-repeat,
+    linear-gradient(45deg, transparent 49.85%, hsl(0 0% 100% / 0.8) 49.95%, hsl(0 0% 100% / 0.8) 50.05%, transparent 50.15%) 22% 86% / 190px 1.3px no-repeat,
+    linear-gradient(130deg, transparent 49.85%, hsl(0 0% 100% / 0.6) 49.95%, hsl(0 0% 100% / 0.6) 50.05%, transparent 50.15%) 22% 86% / 130px 1px no-repeat;
 }
 
 @media (prefers-reduced-motion: reduce) {
