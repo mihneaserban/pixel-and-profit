@@ -13,7 +13,7 @@ export const Hero = () => {
         <div className="animate-fade-up flex flex-wrap justify-center gap-2 mb-8">
           <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-card">
             <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_hsl(142_71%_45%/0.7)] animate-pulse" />
-            Disponibili pentru proiecte noi
+            „Detaliile fac designul — designul e detaliul."
           </div>
           <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-card">
             <span className="h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_8px_hsl(45_93%_55%/0.7)]" />
@@ -21,7 +21,7 @@ export const Hero = () => {
           </div>
           <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-card">
             <span className="h-2 w-2 rounded-full bg-red-500 shadow-[0_0_8px_hsl(0_84%_55%/0.7)]" />
-            „Simplitatea e suprema sofisticare."
+            „Simplitatea e cea mai înaltă formă de stil."
           </div>
         </div>
 
