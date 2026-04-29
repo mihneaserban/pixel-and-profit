@@ -10,10 +10,18 @@ export const Hero = () => {
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[hsl(220_12%_92%)] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-28">
-        <div className="animate-fade-up flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="animate-fade-up flex flex-wrap justify-center gap-2 mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-card">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_hsl(142_71%_45%/0.7)] animate-pulse" />
             Disponibili pentru proiecte noi
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-card">
+            <span className="h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_8px_hsl(45_93%_55%/0.7)]" />
+            „Designul nu e cum arată — e cum funcționează."
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-card">
+            <span className="h-2 w-2 rounded-full bg-red-500 shadow-[0_0_8px_hsl(0_84%_55%/0.7)]" />
+            „Simplitatea e suprema sofisticare."
           </div>
         </div>
 
@@ -21,10 +29,10 @@ export const Hero = () => {
           className="animate-fade-up font-display font-bold leading-[0.95] text-5xl sm:text-7xl md:text-8xl tracking-tight text-balance"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="gradient-text">Site-uri care vând.</span>
+          <span className="gradient-text">Experiențe digitale</span>
           <br />
-          <span className="text-foreground">Marketing care</span>{" "}
-          <span className="gradient-text">scalează.</span>
+          <span className="text-foreground">care</span>{" "}
+          <span className="gradient-text">transformă brandul.</span>
         </h1>
 
         <p

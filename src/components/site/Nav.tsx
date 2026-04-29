@@ -30,20 +30,17 @@ export const Nav = () => {
     <header className={`fixed top-0 inset-x-0 z-50 transition-smooth ${scrolled ? "py-2.5" : "py-4"}`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-5">
         <nav
-          className={`flex items-center justify-between rounded-full pl-2 pr-2 sm:pl-3 sm:pr-3 py-2 transition-smooth ${
+          className={`flex items-center justify-between rounded-full pl-3 pr-3 sm:pl-4 sm:pr-4 py-2.5 transition-smooth ${
             scrolled ? "glass shadow-elevated" : "glass"
           }`}
         >
-          <a href="#top" className="flex items-center gap-2.5 group">
-            <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-white to-[hsl(220_10%_80%)] ring-1 ring-[hsl(220_12%_70%)] shadow-metal overflow-hidden transition-spring group-hover:scale-105">
-              <img
-                src={logo}
-                alt="Pixel & Profit"
-                className="h-9 w-9 object-contain"
-                style={{ filter: "grayscale(1) contrast(1.05) brightness(0.9)" }}
-              />
-            </span>
-            <span className="font-display font-bold text-[15px] tracking-tight text-foreground hidden sm:inline">
+          <a href="#top" className="flex items-center gap-3 group">
+            <img
+              src={logo}
+              alt="Pixel & Profit"
+              className="h-14 w-14 object-contain rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)]"
+            />
+            <span className="font-display font-bold text-[16px] tracking-tight text-foreground hidden sm:inline">
               Pixel <span className="gradient-text">&amp;</span> Profit
             </span>
           </a>
