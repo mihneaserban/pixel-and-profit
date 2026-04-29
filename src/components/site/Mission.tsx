@@ -5,8 +5,8 @@ type Step = {
   icon: typeof Target;
   title: string;
   text: string;
-  x: number; // procente 0-100
-  y: number; // procente 0-100
+  x: number;
+  y: number;
 };
 
 const steps: Step[] = [
@@ -81,7 +81,7 @@ export const Mission = () => {
     return () => ro.disconnect();
   }, []);
 
-  // TRUCUL: Adăugăm un Padding interior (Safe Zone) de 80px
+  // Zona de siguranță interioară (Safe Zone)
   const padding = 80;
   const pts = steps.map((s) => ({
     x: (s.x / 100) * (size.w - padding * 2) + padding,
@@ -95,7 +95,7 @@ export const Mission = () => {
           <span className="text-[11px] font-semibold uppercase tracking-[0.3em] gradient-text">
             Misiune
           </span>
-          <h2 className="mt-5 font-display text-4xl sm:text-6xl leading-[1.05] tracking-tight text-balance text-white">
+          <h2 className="mt-5 font-display text-4xl sm:text-6xl leading-[1.05] tracking-tight text-balance text-foreground">
             Roadmap-ul nostru cu <span className="gradient-text">tine</span>.
           </h2>
           <p className="mt-6 text-base text-muted-foreground text-pretty">
@@ -103,13 +103,11 @@ export const Mission = () => {
           </p>
         </div>
 
-        {/* Am mărit înălțimea aici: h-[800px] și am scos overflow-hidden de pe containerul principal ca să nu taie glow-ul */}
         <div
           ref={containerRef}
           className="relative mt-24 reveal rounded-[2.5rem] glass min-h-[600px]"
           style={{ height: "min(85vh, 800px)" }}
         >
-          {/* Fundal grid tăiat de marginile rotunjite ale chenarului */}
           <div className="absolute inset-0 grid-pattern opacity-40 rounded-[2.5rem]" />
 
           <svg
@@ -119,8 +117,8 @@ export const Mission = () => {
           >
             <defs>
               <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(220 14% 45%)" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="hsl(220 10% 75%)" stopOpacity="0.8" />
+                <stop offset="0%" stopColor="hsl(220 14% 35%)" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="hsl(220 10% 65%)" stopOpacity="0.8" />
               </linearGradient>
             </defs>
 
@@ -151,7 +149,7 @@ export const Mission = () => {
                     <g transform="translate(-10,-10)">
                       <path
                         d="M2 10 L20 2 L12 18 L10 12 Z"
-                        fill="hsl(220 14% 15%)"
+                        fill="hsl(220 14% 22%)"
                         stroke="white"
                         strokeWidth="0.8"
                         strokeLinejoin="round"
@@ -163,7 +161,6 @@ export const Mission = () => {
             })}
           </svg>
 
-          {/* Punctele de conținut folosind coordonatele sigure (px) */}
           {steps.map((s, i) => {
             const Icon = s.icon;
             const pos = pts[i];
@@ -175,11 +172,11 @@ export const Mission = () => {
               >
                 <div className="relative flex flex-col items-center">
                   <div className="relative">
-                    {/* Glow-ul din spate */}
-                    <div className="absolute inset-0 rounded-full bg-white/10 blur-2xl scale-[2.5] group-hover:bg-white/20 transition-all duration-500" />
+                    <div className="absolute inset-0 rounded-full bg-[hsl(220_14%_60%/0.35)] blur-2xl scale-[1.8] group-hover:scale-[2.2] transition-spring" />
                     
-                    <div className="relative h-14 w-14 rounded-full btn-metal-dark flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.3)] group-hover:scale-110 transition-spring border border-white/10">
-                      <Icon className="h-6 w-6 text-white" />
+                    <div className="relative h-14 w-14 rounded-full btn-metal-dark flex items-center justify-center shadow-elevated group-hover:scale-110 transition-spring">
+                      {/* Am schimbat culoarea iconiței înapoi la steel-100 */}
+                      <Icon className="h-6 w-6 text-[hsl(var(--steel-100))]" />
                     </div>
                     
                     <span className="absolute -top-1 -right-1 h-6 w-6 rounded-full btn-metal text-[10px] font-bold flex items-center justify-center shadow-lg border border-white/20">
@@ -187,11 +184,13 @@ export const Mission = () => {
                     </span>
                   </div>
 
-                  <div className="mt-4 w-48 text-center glass rounded-2xl p-3 shadow-xl opacity-90 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 border border-white/10 backdrop-blur-sm">
-                    <h3 className="font-display text-sm font-bold text-white leading-tight">
+                  <div className="mt-4 w-48 text-center glass rounded-2xl p-3 shadow-xl opacity-90 group-hover:opacity-100 group-hover:-translate-y-1 transition-spring backdrop-blur-sm border border-white/10">
+                    {/* Am revenit la text-foreground pentru titlu */}
+                    <h3 className="font-display text-sm font-bold text-foreground leading-tight">
                       {s.title}
                     </h3>
-                    <p className="mt-1.5 text-[11px] leading-relaxed text-white/60">
+                    {/* Am revenit la text-muted-foreground pentru text */}
+                    <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
                       {s.text}
                     </p>
                   </div>
