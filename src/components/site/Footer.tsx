@@ -16,12 +16,13 @@ export const Footer = () => {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <img
-                src={logo}
-                alt="Pixel & Profit"
-                className="h-12 w-12 object-cover rounded-full"
-                style={{ clipPath: "circle(48% at 50% 50%)" }}
-              />
+              <span className="block h-12 w-12 rounded-full overflow-hidden">
+                <img
+                  src={logo}
+                  alt="Pixel & Profit"
+                  className="block h-full w-full object-cover scale-[1.18]"
+                />
+              </span>
               <span className="font-display font-bold text-lg tracking-tight text-white">
                 Pixel <span className="gradient-text-light">&amp;</span> Profit
               </span>

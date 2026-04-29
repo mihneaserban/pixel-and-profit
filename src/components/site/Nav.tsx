@@ -40,13 +40,12 @@ export const Nav = () => {
               type="button"
               onClick={() => setLogoZoom(true)}
               aria-label="Vezi logo-ul mărit"
-              className="group rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+              className="group h-14 w-14 rounded-full overflow-hidden cursor-zoom-in transition-spring hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
             >
               <img
                 src={logo}
                 alt="Pixel & Profit"
-                className="h-14 w-14 object-cover rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] cursor-zoom-in"
-                style={{ clipPath: "circle(48% at 50% 50%)" }}
+                className="block h-full w-full object-cover scale-[1.18]"
               />
             </button>
             <a href="#top" className="font-display font-bold text-[16px] tracking-tight text-foreground hidden sm:inline hover:opacity-80 transition-smooth">
@@ -144,13 +143,16 @@ export const Nav = () => {
           >
             <X className="h-5 w-5" />
           </button>
-          <img
-            src={logo}
-            alt="Pixel & Profit"
+          <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[80vh] max-w-[80vw] w-auto h-auto object-contain drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
-            style={{ clipPath: "circle(48% at 50% 50%)" }}
-          />
+            className="relative h-[80vmin] w-[80vmin] max-h-[80vh] max-w-[80vw] rounded-full overflow-hidden drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
+          >
+            <img
+              src={logo}
+              alt="Pixel & Profit"
+              className="block h-full w-full object-cover scale-[1.18]"
+            />
+          </div>
         </div>
       )}
     </header>
