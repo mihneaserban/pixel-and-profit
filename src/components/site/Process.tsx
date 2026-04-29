@@ -7,20 +7,25 @@ const steps = [
 
 export const Process = () => {
   return (
-    <section id="proces" className="relative py-32 px-6 bg-background">
+    <section id="proces" className="relative py-32 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] gradient-text">Procesul</span>
-          <h2 className="mt-5 font-display font-bold text-4xl sm:text-6xl leading-tight tracking-tight">
+        <div className="max-w-3xl reveal">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.3em] gradient-text">
+            Procesul
+          </span>
+          <h2 className="mt-5 font-display text-4xl sm:text-6xl leading-[1.05] tracking-tight text-balance">
             Patru pași. Zero stres.
           </h2>
         </div>
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {steps.map((s) => (
-            <div key={s.n} className="relative rounded-3xl border border-border p-7 hover:border-primary/50 transition-smooth">
-              <span className="font-display text-5xl font-bold gradient-text">{s.n}</span>
-              <h3 className="mt-5 font-display font-semibold text-xl">{s.title}</h3>
-              <p className="mt-2 text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+          {steps.map((s, i) => (
+            <div
+              key={s.n}
+              className={`reveal reveal-delay-${(i % 3) + 1} relative rounded-3xl glass p-7 hover:-translate-y-1 transition-spring`}
+            >
+              <span className="font-display text-5xl gradient-text">{s.n}</span>
+              <h3 className="mt-5 font-display text-xl text-foreground">{s.title}</h3>
+              <p className="mt-2 text-muted-foreground text-[15px] leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

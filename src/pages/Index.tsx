@@ -9,8 +9,12 @@ import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { AnimatedBackground } from "@/components/site/AnimatedBackground";
+import { useReveal } from "@/hooks/use-reveal";
 
 const Index = () => {
+  useReveal();
+
   useEffect(() => {
     document.title = "Pixel & Profit — Web Design & Marketing Digital Premium";
     const desc = "Site-uri web profesionale și marketing digital care aduc clienți. Pixel & Profit — design, dezvoltare, SEO și ads.";
@@ -24,7 +28,8 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="relative min-h-screen">
+      <AnimatedBackground />
       <Nav />
       <Hero />
       <About />
