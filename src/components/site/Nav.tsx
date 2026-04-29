@@ -13,6 +13,7 @@ const links = [
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [logoZoom, setLogoZoom] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -34,16 +35,23 @@ export const Nav = () => {
             scrolled ? "glass shadow-elevated" : "glass"
           }`}
         >
-          <a href="#top" className="flex items-center gap-3 group">
-            <img
-              src={logo}
-              alt="Pixel & Profit"
-              className="h-14 w-14 object-contain rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)]"
-            />
-            <span className="font-display font-bold text-[16px] tracking-tight text-foreground hidden sm:inline">
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setLogoZoom(true)}
+              aria-label="Vezi logo-ul mărit"
+              className="group rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+            >
+              <img
+                src={logo}
+                alt="Pixel & Profit"
+                className="h-14 w-14 object-contain rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] cursor-zoom-in"
+              />
+            </button>
+            <a href="#top" className="font-display font-bold text-[16px] tracking-tight text-foreground hidden sm:inline hover:opacity-80 transition-smooth">
               Pixel <span className="gradient-text">&amp;</span> Profit
-            </span>
-          </a>
+            </a>
+          </div>
 
           <ul className="hidden md:flex items-center gap-1 text-sm">
             {links.map((l) => (
