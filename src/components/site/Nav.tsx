@@ -125,6 +125,32 @@ export const Nav = () => {
           </ul>
         </div>
       </div>
+
+      {/* Logo zoom modal */}
+      {logoZoom && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-6 animate-fade-up"
+          onClick={() => setLogoZoom(false)}
+          role="dialog"
+          aria-label="Logo Pixel & Profit"
+        >
+          <div className="absolute inset-0 bg-[hsl(220_18%_8%/0.75)] backdrop-blur-md" />
+          <button
+            type="button"
+            aria-label="Închide"
+            className="absolute top-6 right-6 inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal bubble-hover"
+            onClick={(e) => { e.stopPropagation(); setLogoZoom(false); }}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={logo}
+            alt="Pixel & Profit"
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-h-[80vh] max-w-[80vw] w-auto h-auto object-contain rounded-full drop-shadow-[0_30px_80px_hsl(220_18%_6%/0.6)] animate-scale-in"
+          />
+        </div>
+      )}
     </header>
   );
 };
