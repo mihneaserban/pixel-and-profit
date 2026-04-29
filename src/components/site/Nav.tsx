@@ -40,13 +40,12 @@ export const Nav = () => {
               type="button"
               onClick={() => setLogoZoom(true)}
               aria-label="Vezi logo-ul mărit"
-              className="group rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+              className="group h-14 w-14 rounded-full overflow-hidden cursor-zoom-in transition-spring hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
             >
               <img
                 src={logo}
                 alt="Pixel & Profit"
-                className="h-14 w-14 object-cover rounded-full transition-spring group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] cursor-zoom-in"
-                style={{ clipPath: "circle(48% at 50% 50%)" }}
+                className="block h-full w-full object-cover scale-[1.18]"
               />
             </button>
             <a href="#top" className="font-display font-bold text-[16px] tracking-tight text-foreground hidden sm:inline hover:opacity-80 transition-smooth">
