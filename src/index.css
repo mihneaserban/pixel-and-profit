@@ -406,6 +406,22 @@
   100% { box-shadow: 0 0 0 0 hsl(220 12% 96% / 0); }
 }
 
+.splash-float {
+  animation-name: splash-float-y;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+@keyframes splash-float-y {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(var(--drift, 0px), -28px) rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble, .wave-path, .splash-blob, .splash-pulse-dot, .splash-float { animation: none !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bubble, .wave-path, .splash-blob, .splash-pulse-dot { animation: none !important; }
   .reveal { opacity: 1; transform: none; transition: none; }
