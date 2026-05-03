@@ -15,6 +15,7 @@ export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [logoZoom, setLogoZoom] = useState(false);
+  const [socialsOpen, setSocialsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
