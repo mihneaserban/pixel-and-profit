@@ -31,6 +31,7 @@ const Index = () => {
 
   return (
     <main className="relative min-h-screen">
+      <SplashIntro />
       <AnimatedBackground />
       <Nav />
       <Hero />
