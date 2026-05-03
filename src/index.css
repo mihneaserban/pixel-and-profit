@@ -421,8 +421,3 @@
   .bubble, .wave-path, .splash-blob, .splash-pulse-dot, .splash-float { animation: none !important; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .bubble, .wave-path, .splash-blob, .splash-pulse-dot { animation: none !important; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
