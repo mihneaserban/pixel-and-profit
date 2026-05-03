@@ -103,9 +103,53 @@ export const Mission = () => {
           </p>
         </div>
 
+        {/* Mobile / tablet: carousel cu snap orizontal */}
+        <div className="md:hidden mt-14 reveal">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {steps.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={i}
+                  className="snap-center shrink-0 w-[78%] max-w-sm glass rounded-3xl p-6 shadow-xl border border-white/10 relative"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="relative h-12 w-12 rounded-full btn-metal-dark flex items-center justify-center shadow-elevated">
+                      <Icon className="h-5 w-5 text-[hsl(var(--steel-100))]" />
+                      <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full btn-metal text-[10px] font-bold flex items-center justify-center shadow-lg border border-white/20">
+                        {i + 1}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-base font-bold text-foreground leading-tight">
+                      {s.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {s.text}
+                  </p>
+                  {i < steps.length - 1 && (
+                    <div className="absolute -right-3 top-1/2 -translate-y-1/2 text-foreground/40">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M2 12 L20 4 L12 22 L10 14 Z" fill="currentColor" stroke="white" strokeWidth="0.6" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex justify-center gap-1.5 mt-2">
+            {steps.map((_, i) => (
+              <span key={i} className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted-foreground mt-3">Glisează pentru următorul pas →</p>
+        </div>
+
+        {/* Desktop: roadmap interactiv */}
         <div
           ref={containerRef}
-          className="relative mt-24 reveal rounded-[2.5rem] glass min-h-[600px]"
+          className="hidden md:block relative mt-24 reveal rounded-[2.5rem] glass min-h-[600px]"
           style={{ height: "min(85vh, 800px)" }}
         >
           <div className="absolute inset-0 grid-pattern opacity-40 rounded-[2.5rem]" />

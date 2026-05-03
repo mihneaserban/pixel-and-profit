@@ -55,7 +55,7 @@ export const Nav = () => {
             </a>
           </div>
 
-          <ul className="hidden md:flex items-center gap-1 text-sm">
+          <ul className="hidden lg:flex items-center gap-1 text-sm">
             {links.map((l) => (
               <li key={l.href}>
                 <a
@@ -131,7 +131,7 @@ export const Nav = () => {
               aria-label={open ? "Închide meniul" : "Deschide meniul"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal bubble-hover"
+              className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal bubble-hover"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -141,7 +141,7 @@ export const Nav = () => {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden fixed inset-0 top-0 z-40 transition-smooth ${
+        className={`lg:hidden fixed inset-0 top-0 z-40 transition-smooth ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
