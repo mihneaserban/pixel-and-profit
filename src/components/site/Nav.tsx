@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const links = [
@@ -15,6 +15,7 @@ export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [logoZoom, setLogoZoom] = useState(false);
+  const [socialsOpen, setSocialsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -65,6 +66,57 @@ export const Nav = () => {
                 </a>
               </li>
             ))}
+            <li
+              className="relative"
+              onMouseEnter={() => setSocialsOpen(true)}
+              onMouseLeave={() => setSocialsOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setSocialsOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={socialsOpen}
+                className="inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-foreground/75 hover:text-foreground hover:bg-white/60 transition-spring"
+              >
+                Socials
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${socialsOpen ? "rotate-180" : ""}`} />
+              </button>
+              <div
+                className={`absolute right-0 top-full pt-2 transition-spring ${
+                  socialsOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
+                }`}
+              >
+                <div className="glass shadow-elevated rounded-2xl p-2 flex items-center gap-1">
+                  <a
+                    href="https://www.instagram.com/pixelnprofit/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal bubble-hover"
+                  >
+                    <Instagram className="h-4.5 w-4.5" />
+                  </a>
+                  <button
+                    type="button"
+                    aria-label="TikTok (în curând)"
+                    title="În curând"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal opacity-50 cursor-not-allowed"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                      <path d="M16.5 3a5.5 5.5 0 0 0 4.5 4.5v3a8.5 8.5 0 0 1-4.5-1.3v6.3a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.16a3 3 0 1 0 2 2.83V3h3z"/>
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Facebook (în curând)"
+                    title="În curând"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full btn-metal opacity-50 cursor-not-allowed"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            </li>
           </ul>
 
           <div className="flex items-center gap-2">

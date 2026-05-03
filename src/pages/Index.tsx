@@ -11,6 +11,7 @@ import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { AnimatedBackground } from "@/components/site/AnimatedBackground";
+import { SplashIntro } from "@/components/site/SplashIntro";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
 
   return (
     <main className="relative min-h-screen">
+      <SplashIntro />
       <AnimatedBackground />
       <Nav />
       <Hero />
