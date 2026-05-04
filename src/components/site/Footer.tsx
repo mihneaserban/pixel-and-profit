@@ -58,6 +58,7 @@ export const Footer = () => {
                 { h: "#servicii", l: "Servicii" },
                 { h: "#proces", l: "Proces" },
                 { h: "#portofoliu", l: "Portofoliu" },
+                { h: "#misiune", l: "Misiune" },
                 { h: "#faq", l: "FAQ" },
               ].map((i) => (
                 <li key={i.h}>

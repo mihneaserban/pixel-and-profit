@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Ce include partea de marketing?",
-    a: "Strategie inițială, setup conturi (Google Ads, Meta Business, Analytics, Tag Manager), creative grafice, copy pentru anunțuri, lansare campanii și optimizare lunară cu rapoarte clare. Lucrăm pe obiective măsurabile — lead-uri, vânzări, ROAS — nu doar afișări.",
+    a: "Strategie inițială, configurare conturi (Google Ads, Meta Business, Analytics, Tag Manager), vizualuri grafice pentru anunțuri, copywriting, lansarea campaniilor și optimizare lunară cu rapoarte clare. Lucrăm pe obiective măsurabile — lead-uri, vânzări, ROAS — nu doar afișări.",
   },
   {
     q: "Lucrați și cu afaceri mici / startup-uri?",
