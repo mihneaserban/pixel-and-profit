@@ -146,13 +146,14 @@ export const Nav = () => {
         }`}
       >
         <div
-          className="absolute inset-0 bg-[hsl(220_18%_8%/0.55)] backdrop-blur-md"
+          className="absolute inset-0 bg-[hsl(220_18%_55%/0.28)] backdrop-blur-sm"
           onClick={() => setOpen(false)}
         />
         <div
-          className={`absolute top-20 inset-x-4 glass rounded-3xl p-4 shadow-elevated transition-spring ${
+          className={`absolute top-20 inset-x-4 rounded-3xl p-4 shadow-elevated transition-spring border border-white/60 ${
             open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
           }`}
+          style={{ background: "hsl(0 0% 100% / 0.92)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
         >
           <ul className="flex flex-col gap-1">
             {links.map((l) => (
@@ -166,7 +167,44 @@ export const Nav = () => {
                 </a>
               </li>
             ))}
+
             <li className="pt-2">
+              <div className="px-4 pb-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+                Socials
+              </div>
+              <div className="flex items-center gap-2 px-2">
+                <a
+                  href="https://www.instagram.com/pixelnprofit/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full btn-metal bubble-hover"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <button
+                  type="button"
+                  aria-label="TikTok (în curând)"
+                  title="În curând"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full btn-metal opacity-50 cursor-not-allowed"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 3a5.5 5.5 0 0 0 4.5 4.5v3a8.5 8.5 0 0 1-4.5-1.3v6.3a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.16a3 3 0 1 0 2 2.83V3h3z"/>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label="Facebook (în curând)"
+                  title="În curând"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full btn-metal opacity-50 cursor-not-allowed"
+                >
+                  <Facebook className="h-4 w-4" />
+                </button>
+              </div>
+            </li>
+
+            <li className="pt-3">
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
