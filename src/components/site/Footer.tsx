@@ -48,7 +48,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 hidden lg:block">
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/45">
               Navigare
             </h4>

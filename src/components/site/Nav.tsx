@@ -40,9 +40,15 @@ export const Nav = () => {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => setLogoZoom(true)}
-              aria-label="Vezi logo-ul mărit"
-              className="group h-14 w-14 rounded-full overflow-hidden cursor-zoom-in transition-spring hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+              onClick={() => {
+                if (typeof window !== "undefined" && window.innerWidth < 1024) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  setLogoZoom(true);
+                }
+              }}
+              aria-label="Sus / Vezi logo-ul mărit"
+              className="group h-14 w-14 rounded-full overflow-hidden cursor-pointer lg:cursor-zoom-in transition-spring hover:scale-105 drop-shadow-[0_4px_12px_hsl(220_18%_12%/0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
             >
               <img
                 src={logo}

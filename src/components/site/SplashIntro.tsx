@@ -208,13 +208,6 @@ export const SplashIntro = () => {
           Web design & marketing digital care transformă pixelii în profit.
         </p>
 
-        <div
-          className="mt-12 flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.3em] text-[hsl(210_30%_94%/0.78)] animate-fade-up"
-          style={{ animationDelay: "240ms" }}
-        >
-          <span className="splash-pulse-dot" />
-          <span>Apasă oriunde, scroll sau Enter pentru a intra</span>
-        </div>
       </div>
 
       {/* Shimmer line */}
